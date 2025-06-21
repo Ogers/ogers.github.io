@@ -11,7 +11,6 @@ body {
 </style>
 </head>
 <body>
-<head>
 <style>
 .button {
   border: none;
@@ -31,14 +30,20 @@ body {
 }
 .button1 {background-color: #04AA6D;} /* Green */
 .button2 {background-color: #008CBA;} /* Blue */
-
-
-
- 
 </style>
+
+
+
 <button class="button button1">Green</button>
 <button class="button button2">Blue</button>
-</head>
+
+
+
+
+<p id="output">name1</p>
+
+
+
 <h1>My Website</h1>
 <p>A website created by me.</p>
  <img src="images/sawako.png" > 
@@ -46,8 +51,70 @@ body {
  <img src="images/image.jpg" > 
 
 <div class="container">
- <button onclick="myFunction()"><img src="images/sawako.png"/></button>
+ <button onclick="pick_images()"><img id="image" src="cover_images/Horimiya.png"/></button>
 
 </div>
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function pick_images()
+{
+let a = Math.floor(Math.random() * 10);
+let b = Math.floor(Math.random() * 10);
+
+myFunction(a,b)
+}
+
+const an_list = ["Horimiya","Jujutsu Kaisen","NARUTO","Sword Art Online","One Punch Man","Noragami","BLEACH","Kiseijuu  Sei no Kakuritsu","Nanatsu no Taizai","SPY×FAMILY"];
+function myFunction(a,b)
+{
+	let name1 = an_list[a]
+	let url = "cover_images/"
+	url = url.concat(name1,".png")
+	document.getElementById("image").src = url;
+}
+pick_images()
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html> 
